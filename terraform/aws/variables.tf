@@ -50,3 +50,7 @@ variable "tagName" {
     default = "consul"
     description = "Name tag for the servers"
 }
+
+variable "vpc" {
+    description = "vpc"
+}
