@@ -51,6 +51,10 @@ variable "tagName" {
     description = "Name tag for the servers"
 }
 
-variable "vpc" {
+variable "vpc_id" {
     description = "vpc"
+}
+
+variable "subnet_id" {
+    description = "subnet"
 }
