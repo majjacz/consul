@@ -4,6 +4,7 @@ resource "aws_instance" "server" {
     key_name = "${var.key_name}"
     count = "${var.servers}"
     security_groups = ["${aws_security_group.consul.name}"]
+    subnet_id = "${var.subnet_id}"
 
     connection {
         user = "${lookup(var.user, var.platform)}"
@@ -43,7 +44,7 @@ resource "aws_instance" "server" {
 
 resource "aws_security_group" "consul" {
     name = "consul"
-    vpc_id      = "${var.vpc}"
+    vpc_id      = "${var.vpc_id}"
     description = "Consul internal traffic + maintenance."
 
     // These are for internal traffic
