@@ -43,6 +43,7 @@ resource "aws_instance" "server" {
 
 resource "aws_security_group" "consul" {
     name = "consul"
+    vpc_id      = "${var.vpc}"
     description = "Consul internal traffic + maintenance."
 
     // These are for internal traffic
